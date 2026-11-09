@@ -91,7 +91,7 @@ def go(config: DictConfig):
             parameters={
                 "train_data": "processed_train.csv:latest",
                 "model_config": model_config,
-                "export_artifact": config["random_forest"]["export_artifact"],
+                "export_artifact": config["random_forest_pipeline"]["export_artifact"],
                 "random_seed": config["main"]["random_seed"],
                 "val_size": config["data"]["val_size"],
                 "stratify": config["data"]["stratify"]
@@ -104,7 +104,7 @@ def go(config: DictConfig):
             os.path.join(root_path, "evaluate"),
             "main",
             parameters={
-                "model_export": config["random_forest"]["export_artifact"] + ":latest",
+                "model_export": config["random_forest_pipeline"]["export_artifact"] + ":latest",
                 "test_data": "processed_test.csv:latest"
             }
         )
