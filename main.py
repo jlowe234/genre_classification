@@ -68,7 +68,7 @@ def go(config: DictConfig):
             os.path.join(root_path, "segregate"),
             "main",
             parameters={
-                "input_artifact": "clean_data.csv:latest",
+                "input_artifact": "preprocessed_data.csv:latest",
                 "artifact_root": "processed",
                 "artifact_type": "training_data",
                 "test_size": config["data"]["test_size"],
